@@ -9,6 +9,8 @@ postBtn.addEventListener("click", async function getdata() {
   const brand = allInputs[1].value;
   const price = allInputs[4].value;
   const img = allInputs[5].files[0];
+  const createdAt = new Date()
+  debugger
   const nams = img.name;
   const url = await postFile(nams, img);
   const description = document.getElementById("Description").value;
@@ -20,6 +22,7 @@ postBtn.addEventListener("click", async function getdata() {
       console.log(uid)
       var obj = {
         uid,
+        createdAt,
         title,
         brand,
         price,
@@ -36,8 +39,6 @@ postBtn.addEventListener("click", async function getdata() {
       alert('user not login')
     }
   })
- 
-
   // window.location.href='../dashboard/dashboard.html'
 
   //  console.log(obj)
