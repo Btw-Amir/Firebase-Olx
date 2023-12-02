@@ -9,11 +9,11 @@ if (receivedData) {
 var myads= document.getElementById('Myads')
 myads.addEventListener("click", function(e) {
   e.preventDefault();
-  window.location.href = "../myads/myads.html";
+  window.location.href = "../../public/myads/myads.html";
 })
 let r = document.getElementById("g");
 r.addEventListener("click", function () {
-  window.location.href = "../postAds/postAds.html";
+  window.location.href = "../../public/postAds/postAds.html";
 });
 renderAds();
 import { getAds } from "../config/firebase.js";

@@ -35,6 +35,10 @@ textarea {
   background: none;
   /* display: none; */
 }
-.condition:focus {
-  background-color: aquamarine;
+.new{
+  border: 1px solid red;
+}
+.new:hover{
+  background-color: blueviolet;
+  border: 1px solid red;
 }

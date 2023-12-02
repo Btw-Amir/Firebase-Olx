@@ -1,8 +1,13 @@
 import { postAds, postFile } from "../config/firebase.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 var uid
-
 const postBtn = document.getElementById("post-btn");
+focus()
+
+function focus(){
+  const neww = document.querySelector("input[name=btn]:checked").value;
+    
+}
 postBtn.addEventListener("click", async function getdata() {
   const allInputs = document.getElementsByTagName("input");
   const title = allInputs[0].value;

@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import {
   getAuth,
+  signInWithPopup, FacebookAuthProvider,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -39,9 +40,9 @@ function signsup(user) {
     .then((userCredential) => {
       const user = userCredential.user;
       var encodedData = encodeURIComponent(email);
-      window.location.href = "../dashboard/dashboard.html?data=" + encodedData;
+      window.location.href = "../index.html?data=" + encodedData;
       alert("sign-up successfully");
-      window.location.href = "../dashboard/dashboard.html";
+      window.location.href = "../index.html";
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -60,7 +61,7 @@ function login(user) {
     .then((userCredential) => {
       const user = userCredential.user;
       var encodedData = encodeURIComponent(email);
-      window.location.href = "../dashboard/dashboard.html?data=" + encodedData;
+      window.location.href = "../index.html?data=" + encodedData;
       alert("login-successfully");
     })
     .catch((error) => {
@@ -90,6 +91,7 @@ async function postFile(nams, img) {
     console.log("Uploaded a blob or file!");
   });
   const url = await getDownloadURL(storageRef);
+  console.log(storageRef)
   return url;
 }
 
@@ -138,6 +140,17 @@ async function myAds(){
   })
   return userAllads
 }
+// const fb = document.getElementById('fb-auth')
+// fb.addEventListener('click',async function(){
+//   try{
+//     const provider = new FacebookAuthProvider();
+//     await signInWithPopup(auth, provider)
+//   }
+//   catch(e){
+// alert(e)
+//   }
+// })
+
 
 export {myAds, postAds, details, postFile, signsup, login, getAds, navigate };
 // 24th nov firday:
